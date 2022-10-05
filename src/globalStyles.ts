@@ -16,13 +16,21 @@ const GlobalStyle = createGlobalStyle`
 }
 
 
+:root {
+    --primary-color: #ffffe3;
+    --primary-bg-clr: #10100e;
+    --primary-font: "Clash Display Regular"
+}
+
+
   body {
     margin: 0;
     padding: 0;
-    background: #000;
-    color: #fff;
-    font-family: 'Clash Display Regular';
-  }
+    background: var(--primary-bg-clr);
+    color: var(--primary-color);
+    font-family: var(--primary-font);
+    overflow: hidden;
+}
 `;
 
 export default GlobalStyle;

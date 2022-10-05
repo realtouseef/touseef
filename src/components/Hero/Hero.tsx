@@ -1,33 +1,38 @@
 import { useEffect } from "react";
 import Intro from "../Intro/Intro";
 import { gsap, Power3 } from "gsap";
-import { NinjaTextSection, NinjaTextSectionPara } from "./Hero.styles";
+import {
+  NinjaTextMain,
+  NinjaTextSection,
+  NinjaTextSectionPara,
+} from "./Hero.styles";
 
 const Hero: React.FunctionComponent = () => {
   const tl = gsap.timeline();
 
   useEffect(() => {
-    tl.from(".hero .hero_p", {
-      y: 80,
-      duration: 1,
-      stagger: { amount: 0.9 },
+    tl.from(".hero .hero_p", 2, {
+      y: 600,
+      stagger: { amount: 0.5 },
       ease: Power3.easeOut,
     });
   });
 
   return (
     <>
-      <main>
+      <NinjaTextMain>
         <section>
-          <p>touseef ibn khaleel</p>
+          <p>frontend ninja</p>
         </section>
         <NinjaTextSection className="hero">
           <NinjaTextSectionPara className="hero_p">
-            Frontend
+            touseef
           </NinjaTextSectionPara>
         </NinjaTextSection>
         <NinjaTextSection className="hero">
-          <NinjaTextSectionPara className="hero_p">Ninja</NinjaTextSectionPara>
+          <NinjaTextSectionPara className="hero_p">
+            ibn khaleel
+          </NinjaTextSectionPara>
         </NinjaTextSection>
         <section>
           <div>
@@ -41,7 +46,7 @@ const Hero: React.FunctionComponent = () => {
             </a>
           </div>
         </section>
-      </main>
+      </NinjaTextMain>
       {/* <Intro /> */}
     </>
   );
