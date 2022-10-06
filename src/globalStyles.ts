@@ -3,23 +3,32 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
 
 @font-face {
-    font-family: 'Clash Display Regular';
-    src: url(/fonts/ClashDisplay-Regular.otf);
+    font-family: 'Cabinet Grotesk Medium';
+    src: url(/fonts/CabinetGrotesk-Medium.otf);
 }
 @font-face {
-    font-family: 'Clash Display Semibold';
-    src: url(/fonts/ClashDisplay-Semibold.otf);
+    font-family: 'Cabinet Grotesk Bold';
+    src: url(/fonts/CabinetGrotesk-Bold.otf);
 }
 @font-face {
-    font-family: 'Clash Display Bold';
-    src: url(/fonts/ClashDisplay-bold.otf);
+    font-family: 'Cabinet Grotesk ExtraBold';
+    src: url(/fonts/CabinetGrotesk-Extrabold.otf);
+}
+@font-face {
+    font-family: 'Satoshi Regular';
+    src: url(/fonts/Satoshi-Regular.otf);
+}
+@font-face {
+    font-family: 'Satoshi Bold';
+    src: url(/fonts/Satoshi-Bold.otf);
 }
 
 
 :root {
     --primary-color: #ffffe3;
     --primary-bg-clr: #10100e;
-    --primary-font: "Clash Display Regular"
+    --body-font: "Satoshi Regular"
+    --heading-font: "Cabinet Grotesk Extrabold"
 }
 
 
@@ -30,6 +39,19 @@ const GlobalStyle = createGlobalStyle`
     color: var(--primary-color);
     font-family: var(--primary-font);
     overflow: hidden;
+}
+
+a { 
+    text-decoration: none;
+    color: var(--primary-color)
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--heading-font);
+}
+
+p {
+    font-family: var(--body-font);
 }
 `;
 

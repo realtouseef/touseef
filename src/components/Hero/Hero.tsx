@@ -2,51 +2,76 @@ import { useEffect } from "react";
 import Intro from "../Intro/Intro";
 import { gsap, Power3 } from "gsap";
 import {
-  NinjaTextMain,
-  NinjaTextSection,
-  NinjaTextSectionPara,
+  HeroTextAnchor,
+  HeroTextBottomAnchor,
+  HeroTextMain,
+  HeroTextSection,
+  HeroTextSectionPara,
+  HeroTextTopSectionPara,
 } from "./Hero.styles";
+import Splitting from "splitting";
 
 const Hero: React.FunctionComponent = () => {
   const tl = gsap.timeline();
 
   useEffect(() => {
-    tl.from(".hero .hero_p", 2, {
-      y: 600,
-      stagger: { amount: 0.5 },
+    tl.to(".hero_p", { css: { visibility: "visible" } });
+    tl.from(".hero_p", {
+      y: 500,
+      duration: 1.8,
+      delay: 1,
+      stagger: { amount: 0.9 },
       ease: Power3.easeOut,
     });
   });
 
+  useEffect(() => {
+    Splitting();
+
+    tl.from(".chars ", {
+      y: 50,
+      duration: 1.1,
+      delay: 1,
+      stagger: { amount: 0.5 },
+      ease: Power3.easeOut,
+    });
+  }, []);
+
   return (
     <>
-      <NinjaTextMain>
+      <HeroTextMain>
+        <HeroTextTopSectionPara>
+          <p data-splitting="chars" className="ninja">
+            frontend ninja
+          </p>
+        </HeroTextTopSectionPara>
+
         <section>
-          <p>frontend ninja</p>
+          <HeroTextSection className="hero">
+            <HeroTextSectionPara className="hero_p">
+              touseef
+            </HeroTextSectionPara>
+          </HeroTextSection>
+          <HeroTextSection className="hero">
+            <HeroTextSectionPara className="hero_p">
+              ibn khaleel
+            </HeroTextSectionPara>
+          </HeroTextSection>
         </section>
-        <NinjaTextSection className="hero">
-          <NinjaTextSectionPara className="hero_p">
-            touseef
-          </NinjaTextSectionPara>
-        </NinjaTextSection>
-        <NinjaTextSection className="hero">
-          <NinjaTextSectionPara className="hero_p">
-            ibn khaleel
-          </NinjaTextSectionPara>
-        </NinjaTextSection>
-        <section>
+
+        <HeroTextBottomAnchor>
           <div>
             <p>Available for freelance work.</p>
-            <a
+            <HeroTextAnchor
               href="https://linkedin.com/in/touseefcodes"
               target="_blank"
               className="underline hover:text-orange-300"
             >
               Let's talk
-            </a>
+            </HeroTextAnchor>
           </div>
-        </section>
-      </NinjaTextMain>
+        </HeroTextBottomAnchor>
+      </HeroTextMain>
       {/* <Intro /> */}
     </>
   );
