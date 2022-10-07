@@ -16,11 +16,11 @@ const Hero: React.FunctionComponent = () => {
 
   useEffect(() => {
     tl.to(".hero_p", { css: { visibility: "visible" } });
-    tl.from(".hero_p", {
-      y: 500,
+    tl.to(".hero_p", {
+      y: 0,
       duration: 1.8,
       delay: 1,
-      stagger: { amount: 0.9 },
+      stagger: 0.9,
       ease: Power3.easeOut,
     });
   });
@@ -29,10 +29,10 @@ const Hero: React.FunctionComponent = () => {
     Splitting();
 
     tl.from(".chars ", {
-      y: 50,
+      y: 0,
       duration: 1.1,
       delay: 1,
-      stagger: { amount: 0.5 },
+      stagger: 0.5,
       ease: Power3.easeOut,
     });
   }, []);

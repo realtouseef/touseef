@@ -45,6 +45,8 @@ export const HeroTextSectionPara = styled.section`
   font-size: 4rem;
   line-height: 4rem;
   font-weight: bold;
+  transform: translateY("500px");
+  transition: transform 250ms;
 
   @media (${breakpoint.device.xs}) {
     font-size: 6rem;

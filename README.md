@@ -5,3 +5,5 @@
 - TypeScript
 - Styled-Components
 - gsap
+
+// apparently abandoned, might work later when freee.
